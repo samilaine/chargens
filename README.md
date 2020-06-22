@@ -1,6 +1,6 @@
 # Various RFC864 Implementations
 
-Several TCP implementations of RFC864-compliant character generator services.
+Several TCP implementations of [RFC864](https://tools.ietf.org/rfc/rfc864.txt)-compliant character generator services.
 
 The filenames should be obvious, but just in case they're not: Anything
 with "good" in it will implement a character generator exactly as RFC864
