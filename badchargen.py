@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import random, socketserver, string, threading
+import os, random, socketserver, string, threading
 
 class Handler(socketserver.BaseRequestHandler):
   def handle(self):
@@ -22,7 +22,7 @@ class Server(socketserver.ThreadingMixIn, socketserver.TCPServer):
   pass
 
 if __name__ == '__main__':
-  srv = Server(('localhost', 1919), Handler)
+  srv = Server(('localhost', os.environ.get('PORT', 1919)), Handler)
   thrd = threading.Thread(target = srv.serve_forever)
   thrd.daemon = True
   thrd.start()
